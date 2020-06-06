@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp_DMS", "WpfApp_DMS\WpfApp_DMS.csproj", "{B23AE988-D6FC-417C-9E36-8602FFC6B0B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyScreens", "MyScreens\MyScreens.csproj", "{FF1D5590-D86B-407A-88D7-902F151D35DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B23AE988-D6FC-417C-9E36-8602FFC6B0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B23AE988-D6FC-417C-9E36-8602FFC6B0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B23AE988-D6FC-417C-9E36-8602FFC6B0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B23AE988-D6FC-417C-9E36-8602FFC6B0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1D5590-D86B-407A-88D7-902F151D35DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1D5590-D86B-407A-88D7-902F151D35DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1D5590-D86B-407A-88D7-902F151D35DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1D5590-D86B-407A-88D7-902F151D35DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77E87DCF-3CFB-45D3-87B2-61509E740A1A}
+	EndGlobalSection
+EndGlobal

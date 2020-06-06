@@ -1,0 +1,186 @@
+﻿<UserControl x:Class="MyScreens.Views.EmploymentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:local="clr-namespace:MyScreens.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="#dbe1ed">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                   Text="Employment Contract Issued" Foreground="White"
+                   TextAlignment="Center"
+                   FontSize="35"
+                   Background="#252638"/>
+        <TextBox Grid.Row="1" Grid.Column="0" Height="40"
+                 x:Name="ContractOfficer"
+                 Margin="35,0,35,0" FontSize="15"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Height="20" Width="110" FontSize="15"
+                   Text="Contract Officer"
+                   Foreground="#233452"
+                   IsHitTestVisible="False">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=ContractOfficer}"
+                                     Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <TextBox Grid.Row="1" Grid.Column="1" Height="40"
+                 x:Name="Department" Margin="35,0,35,0" FontSize="15"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Height="20" Width="80" FontSize="15"
+                   Text="Department"
+                   Foreground="#233452"
+                   IsHitTestVisible="False">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Department}"
+                                     Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <DatePicker Grid.Column="2" Grid.Row="1" Height="40" Margin="35,0,35,0" 
+                    FontSize="15" Background="White"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Foreground="#233452"/>
+
+
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="40"
+                 x:Name="Businesstitles"
+                 FontSize="15"
+                 Margin="35,0,35,0"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="20" Width="170" FontSize="15"
+                   Text="Business Contract Titles"
+                   Foreground="#1b2842"
+                   IsHitTestVisible="False">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Businesstitles}"
+                                     Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Height="40"
+                 x:Name="Notes"
+                 FontSize="15"
+                 Margin="35,0,35,0"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Height="20" Width="45" FontSize="15"
+                   Text="Notes"
+                   Foreground="#1b2842"
+                   IsHitTestVisible="False">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Notes}"
+                                     Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Grid Grid.Row="4" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                    Margin="20,0,0,0"
+                Content="Delete"
+                Height="40"
+                Width="90" Foreground="Black" FontSize="18"
+                Background="#a04746">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button Grid.Column="2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Content="Save"
+                Height="40"
+                Width="90" Foreground="Black" FontSize="18"
+                Background="#8fb26e">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="280,20,20,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Height="50" Width="50" Grid.Column="0">
+                <Image Width="50" Height="50" Source="/MyScreens;component/img/printer.png"></Image>
+            </Button>
+            <Button Grid.Column="1" Height="50" Width="50">
+                <Image Width="50" Height="50" Source="/MyScreens;component/img/AddNewFile.png"></Image>
+            </Button>
+            <Button Grid.Column="2" Height="50" Width="50">
+                <Image  Width="50" Height="50" Source="/MyScreens;component/img/excel.png"></Image>
+            </Button>
+            <Button Grid.Column="3" Height="50" Width="50">
+                <Image Width="50" Height="50" Source="/MyScreens;component/img/word.png"></Image>
+            </Button>
+            <Button Grid.Column="4" Width="50" Height="50">
+                <Image Width="50" Height="50" Source="/MyScreens;component/img/Adobe.png"></Image>
+            </Button>
+            
+        </Grid>
+    </Grid>
+</UserControl>
