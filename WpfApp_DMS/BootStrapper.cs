@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MyScreens.Views;
 
 namespace WpfApp_DMS
 {
     [Obsolete]
     class BootStrapper : UnityBootstrapper
     {
-        IRegionManager regionManager;
-
+        IRegionManager regionManager;      
         public override void Run(bool runWithDefaultConfiguration)
         {
             base.Run(runWithDefaultConfiguration);
@@ -34,6 +34,9 @@ namespace WpfApp_DMS
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+            Container.RegisterTypeForNavigation<HomeScreen>("HomeScreen");
+            Container.RegisterTypeForNavigation<EmploymentView>("EmploymentView");
+            Container.RegisterTypeForNavigation<LoginScreen>("LoginScreen");
         }
 
         protected override void ConfigureModuleCatalog()

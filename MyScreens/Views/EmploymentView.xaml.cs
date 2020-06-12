@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using Prism.Regions;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Controls;
 
 namespace MyScreens.Views
 {
@@ -7,9 +9,16 @@ namespace MyScreens.Views
     /// </summary>
     public partial class EmploymentView : UserControl
     {
-        public EmploymentView()
+        //IRegionManager _regionManager;
+        public EmploymentView()//IRegionManager regionManager )
         {
             InitializeComponent();
+            //_regionManager = regionManager;
         }
+        //public void Show(string navigateToHomePage)
+        //{
+        //    if (navigateToHomePage != null)
+        //        _regionManager.RequestNavigate("MainRegion", navigateToHomePage);
+        //}
     }
 }

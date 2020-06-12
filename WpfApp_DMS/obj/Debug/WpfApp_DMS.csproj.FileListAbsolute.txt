@@ -2,6 +2,7 @@ C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\WpfApp_DMS.exe.config
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\WpfApp_DMS.exe
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\WpfApp_DMS.pdb
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\CommonServiceLocator.dll
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\MyScreens.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.Unity.Wpf.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.Wpf.dll
@@ -11,6 +12,9 @@ C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\System.ValueTuple.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Unity.Abstractions.dll
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Unity.Container.dll
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\EntityFramework.dll
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\MyScreens.pdb
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\MyScreens.dll.config
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.pdb
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.xml
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Prism.Unity.Wpf.pdb
@@ -22,6 +26,8 @@ C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\System.Threading.Task
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\System.ValueTuple.xml
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Unity.Abstractions.pdb
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\Unity.Container.pdb
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\EntityFramework.xml
+C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.csprojAssemblyReference.cache
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\Shell.g.cs
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\App.g.cs
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS_MarkupCompile.cache
@@ -34,6 +40,3 @@ C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.csproj.Cor
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.csproj.CopyComplete
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.exe
 C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.pdb
-C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\MyScreens.dll
-C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\bin\Debug\MyScreens.pdb
-C:\Users\Dell\source\repos\WpfApp_DMS\WpfApp_DMS\obj\Debug\WpfApp_DMS.csprojAssemblyReference.cache
