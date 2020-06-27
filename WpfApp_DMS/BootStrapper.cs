@@ -34,9 +34,13 @@ namespace WpfApp_DMS
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+            Container.RegisterTypeForNavigation<LoginScreen>("LoginScreen");
             Container.RegisterTypeForNavigation<HomeScreen>("HomeScreen");
             Container.RegisterTypeForNavigation<EmploymentView>("EmploymentView");
-            Container.RegisterTypeForNavigation<LoginScreen>("LoginScreen");
+            Container.RegisterTypeForNavigation<IncomingWorkContract>("IncomingWorkContract");
+            Container.RegisterTypeForNavigation<SearchPage>("SearchPage");
+
+
         }
 
         protected override void ConfigureModuleCatalog()

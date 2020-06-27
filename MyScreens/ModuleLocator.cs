@@ -21,11 +21,13 @@ namespace MyScreens
         public void OnInitialized(IContainerProvider containerProvider)
         {
             _regionManager.RegisterViewWithRegion("MainRegion", typeof(LoginScreen));
+            
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            //_regionManager.RegisterViewWithRegion("MainRegion", typeof(HomeScreen));
+            //containerRegistry.Register(typeof(HomeScreen));
         }
     }
 }

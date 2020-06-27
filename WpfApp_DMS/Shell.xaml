@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:local="clr-namespace:WpfApp_DMS"
-        mc:Ignorable="d"
-        Title="Shell" Height="600" Width="1000">
+        Title="Shell" mc:Ignorable="d" 
+        d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
         <Grid>
             <ContentControl prism:RegionManager.RegionName="MainRegion"/>

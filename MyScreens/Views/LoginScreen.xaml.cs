@@ -29,37 +29,37 @@ namespace MyScreens.Views
         }
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=SAQUIBVSTORE\SAQUIBSQL; Initial Catalog=DMS-WPF; Integrated Security=True;");
-            try
-            {
-                if (sqlCon.State == ConnectionState.Closed)
-                    sqlCon.Open();
-                string query = "SELECT COUNT(1) FROM LoginCredentials WHERE username=@username AND password=@password";
-                SqlCommand cmd = new SqlCommand(query, sqlCon);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@username", username.Text);
-                cmd.Parameters.AddWithValue("@password", password.Password);
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-                if (count == 1)
-                {
-                    var window = new Window();
-                    window.Content = new EmploymentView();
-                    window.Show();
-                    Window.GetWindow(this).Close();
-                }
-                else
-                {
-                    MessageBox.Show("Username or password is incorrect");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
+            //SqlConnection sqlCon = new SqlConnection(@"Data Source=SAQUIBVSTORE\SAQUIBSQL; Initial Catalog=DMS-WPF; Integrated Security=True;");
+            //try
+            //{
+            //    if (sqlCon.State == ConnectionState.Closed)
+            //        sqlCon.Open();
+            //    string query = "SELECT COUNT(1) FROM LoginCredentials WHERE username=@username AND password=@password";
+            //    SqlCommand cmd = new SqlCommand(query, sqlCon);
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.Parameters.AddWithValue("@username", username.Text);
+            //    cmd.Parameters.AddWithValue("@password", password.Password);
+            //    int count = Convert.ToInt32(cmd.ExecuteScalar());
+            //    if (count == 1)
+            //    {
+            //        var window = new Window();
+            //        window.Content = new HomeScreen();
+            //        window.Show();
+            //        Window.GetWindow(this).Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Username or password is incorrect");
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
 
-            }
+            //}
         }
     }
 }

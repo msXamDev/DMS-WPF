@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:local="clr-namespace:MyScreens.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" d:DesignWidth="1000">
 
     <UserControl.Resources>
-        <Style x:Key="LanguageButton" TargetType="Button">
+        <Style x:Key="PageButton" TargetType="Button">
             <Setter Property="Background" Value="#fff"/>
             <Setter Property="Foreground" Value="#000"/>
             <Setter Property="Template">
@@ -17,7 +19,6 @@
                         <Border CornerRadius="10" Background="{TemplateBinding Background}">
                             <ContentPresenter HorizontalAlignment="Center" 
                                               VerticalAlignment="Center">
-
                             </ContentPresenter>
                         </Border>
                     </ControlTemplate>
@@ -25,7 +26,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Grid>
+    <Grid Background="#dbe1ed">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -33,11 +34,63 @@
         </Grid.ColumnDefinitions>
 
         <Button Grid.Column="0"
-                
+                Grid.ColumnSpan="2"
+                Style="{StaticResource ResourceKey=PageButton}"
+                Command="{Binding EmpConButton}"
+                CommandParameter="EmploymentView"
                 Width="200"
                 Height="200"
-                FontSize="50">
-                English
+                FontSize="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" Margin="187,0,280,0">
+            <TextBlock TextAlignment="Center"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="81">
+                <Run Text="Employment"/><LineBreak/>
+                <Run Text="Contract"/><LineBreak/>
+            </TextBlock>
         </Button>
+        <!--<Image Source="/MyScreens;component/img/employment.png"
+               Grid.Column="0" Width="50" Height="50"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" 
+               Margin="138,140,0,0"/>-->
+
+        <Button Grid.Column="1"
+                Style="{StaticResource ResourceKey=PageButton}"
+                Command="{Binding IncWorkConButton}"
+                CommandParameter="IncomingWorkContract"
+                Width="200"
+                Height="200"
+                FontSize="30">
+            <TextBlock TextAlignment="Center"
+                       Height="114">
+                <Run Text="Incoming"/><LineBreak/>
+                <Run Text="Work"/><LineBreak/>
+                <Run Text="Contract"/><LineBreak/>
+            </TextBlock>
+        </Button>
+        <!--<Image Source="/MyScreens;component/img/IncomingWork.png"
+               Grid.Column="1" Width="50" Height="50"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" 
+               Margin="104.8,140,0,0"/>-->
+
+        <Button Grid.Column="1"
+                Style="{StaticResource ResourceKey=PageButton}"
+                Command="{Binding SearchButton}"
+                CommandParameter="SearchPage"
+                Width="200"
+                Height="200"
+                FontSize="30" Margin="280,0,186,0" Grid.ColumnSpan="2">
+            <TextBlock TextAlignment="Center" 
+                       Height="80">
+                <Run Text="Search"/><LineBreak/>
+                <Run Text="Page"/><LineBreak/>
+            </TextBlock>
+
+        </Button>
+
     </Grid>
 </UserControl>

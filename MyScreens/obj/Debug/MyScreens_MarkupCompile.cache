@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-31092880441
+51722380863
 2-1587521034
-12-270194892
+172000136929
 132-1854138780
-Views\EmploymentView.xaml;Views\HomeScreen.xaml;Views\LoginScreen.xaml;
+Views\EmploymentView.xaml;Views\HomeScreen.xaml;Views\IncomingWorkContract.xaml;Views\LoginScreen.xaml;Views\SearchPage.xaml;
 
 False
 

@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace MyScreens.ViewModels
 {
-    class EmploymentViewModel : BindableBase
+    class SearchPageViewModel : BindableBase
     {
         private readonly IRegionManager _regionManager;
-        public DelegateCommand<string> HomeButton { get; private set; }
-        public EmploymentViewModel(IRegionManager regionManager)
+        public DelegateCommand<string> HomeButton { get; set; }
+
+        public SearchPageViewModel(IRegionManager regionManager)
         {
             _regionManager = regionManager;
             HomeButton = new DelegateCommand<string>(HomeButtonClicked);

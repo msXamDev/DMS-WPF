@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MyScreens.Views.EmploymentView"
+﻿<UserControl x:Class="MyScreens.Views.IncomingWorkContract"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -21,12 +21,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
+        
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-                   Text="Employment Contract Issued" Foreground="White"
+                   Text="Incoming Work Contract" Foreground="White"
                    TextAlignment="Center"
                    FontSize="35"
                    Background="#252638"/>
-
         <Button Command="{Binding HomeButton}" CommandParameter="HomeScreen" Grid.Column="0" HorizontalAlignment="Left"
                 Margin="10,0,0,0"
                 Grid.Row="0" 
@@ -40,7 +41,8 @@
             </StackPanel>
 
         </Button>
-        <!--<Button Command="{Binding NextButton}" CommandParameter="IncomingWorkContract" Grid.Column="2" HorizontalAlignment="Right"
+        <!--<Button Grid.Column="2" HorizontalAlignment="Right"
+                Command="{Binding NextButton}" CommandParameter="SearchPage"
                 Margin="0,0,10,0"
                 Grid.Row="0" 
                 FontSize="20" Height="50"
@@ -52,22 +54,21 @@
             </StackPanel>
 
         </Button>-->
-
-
         <TextBox Grid.Row="1" Grid.Column="0" Height="40"
-                 x:Name="ContractOfficer"
+                 x:Name="Department"
                  Margin="35,0,35,0" FontSize="15"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"/>
+        
         <TextBlock Grid.Row="1" Grid.Column="0" Height="20" Width="110" FontSize="15"
-                   Text="Contract Officer"
+                   Text="Department"
                    Foreground="#233452"
                    IsHitTestVisible="False">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=ContractOfficer}"
+                        <DataTrigger Binding="{Binding Text, ElementName=Department}"
                                      Value="">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
@@ -77,18 +78,18 @@
         </TextBlock>
 
         <TextBox Grid.Row="1" Grid.Column="1" Height="40"
-                 x:Name="Department" Margin="35,0,35,0" FontSize="15"
+                 x:Name="Customer" Margin="35,0,35,0" FontSize="15"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"/>
         <TextBlock Grid.Row="1" Grid.Column="1" Height="20" Width="80" FontSize="15"
-                   Text="Department"
+                   Text="Customer"
                    Foreground="#233452"
                    IsHitTestVisible="False">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=Department}"
+                        <DataTrigger Binding="{Binding Text, ElementName=Customer}"
                                      Value="">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
@@ -185,7 +186,29 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="280,20,20,20">
+        <TextBox Grid.Row="4" Grid.Column="1" Height="40"
+                 x:Name="Recommendation" Margin="35,0,35,0" FontSize="15"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Height="20" Width="130" FontSize="15"
+                   Text="Recommendations"
+                   Foreground="#233452"
+                   IsHitTestVisible="False">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=Recommendation}"
+                                     Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+
+        <Grid Grid.Row="4" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
