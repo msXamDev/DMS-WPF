@@ -80,8 +80,7 @@
                VerticalAlignment="Top"/>
 
 
-        <PasswordBox PasswordChar="{Binding password}"
-                     Template="{StaticResource passwordbox}"
+        <PasswordBox Template="{StaticResource passwordbox}"
                      Grid.Row="2" Height="60" Width="400"
                      x:Name="password"
                      VerticalAlignment="Bottom"
