@@ -51,7 +51,7 @@ namespace MyScreens.ViewModels
             }
             else
             {
-                MessageBox.Show("Incorrect Username or password");
+                MessageBox.Show("Incorrect Username or password", "Error !", MessageBoxButton.OK);
             }
         }
     }
