@@ -89,24 +89,29 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Login.cs" />
-    <Compile Include="Models\UserDeatil.cs">
-      <DependentUpon>Users.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Users.Context.cs">
+    <Compile Include="Models\DMSAppData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Users.Context.tt</DependentUpon>
+      <DependentUpon>DMSAppData.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Users.cs">
+    <Compile Include="Models\DMSAppData.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Users.tt</DependentUpon>
+      <DependentUpon>DMSAppData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Users.Designer.cs">
+    <Compile Include="Models\DMSAppData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Users.edmx</DependentUpon>
+      <DependentUpon>DMSAppData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IncomingContractTable.cs">
+      <DependentUpon>DMSAppData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OutgoingContractTable.cs">
+      <DependentUpon>DMSAppData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserDetail.cs">
+      <DependentUpon>DMSAppData.tt</DependentUpon>
     </Compile>
     <Compile Include="ModuleLocator.cs" />
     <Compile Include="PasswordHelper\PasswordBinding.cs" />
@@ -134,12 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Models\Users.edmx">
+    <EntityDeploy Include="Models\DMSAppData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Users.Designer.cs</LastGenOutput>
+      <LastGenOutput>DMSAppData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Users.edmx.diagram">
-      <DependentUpon>Users.edmx</DependentUpon>
+    <None Include="Models\DMSAppData.edmx.diagram">
+      <DependentUpon>DMSAppData.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -187,15 +192,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Users.Context.tt">
+    <Content Include="Models\DMSAppData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Users.edmx</DependentUpon>
-      <LastGenOutput>Users.Context.cs</LastGenOutput>
+      <DependentUpon>DMSAppData.edmx</DependentUpon>
+      <LastGenOutput>DMSAppData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Users.tt">
+    <Content Include="Models\DMSAppData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Users.edmx</DependentUpon>
-      <LastGenOutput>Users.cs</LastGenOutput>
+      <DependentUpon>DMSAppData.edmx</DependentUpon>
+      <LastGenOutput>DMSAppData.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

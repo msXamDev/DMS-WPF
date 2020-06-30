@@ -1,12 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="UserEntityModelStoreContainer" CdmEntityContainer="UserDetailEntities">
-    <EntitySetMapping Name="UserDeatils">
-      <EntityTypeMapping TypeName="UserEntityModel.UserDeatil">
-        <MappingFragment StoreEntitySet="UserDeatils">
+    <EntitySetMapping Name="IncomingContractTables">
+      <EntityTypeMapping TypeName="UserEntityModel.IncomingContractTable">
+        <MappingFragment StoreEntitySet="IncomingContractTable">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutgoingContractTables">
+      <EntityTypeMapping TypeName="UserEntityModel.OutgoingContractTable">
+        <MappingFragment StoreEntitySet="OutgoingContractTable">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+          <ScalarProperty Name="ContractOfficer" ColumnName="ContractOfficer" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="UserEntityModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

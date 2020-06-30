@@ -75,7 +75,6 @@ D:\GIT_Projects_all\WpfApp_DMS\MyScreens\bin\Debug\System.Threading.Tasks.Extens
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\bin\Debug\System.ValueTuple.xml
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\bin\Debug\Unity.Abstractions.pdb
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\bin\Debug\Unity.Container.pdb
-D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.csprojAssemblyReference.cache
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\Views\EmploymentView.g.cs
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\Views\HomeScreen.g.cs
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\Views\IncomingWorkContract.g.cs

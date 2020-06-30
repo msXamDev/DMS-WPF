@@ -12,10 +12,13 @@ namespace MyScreens.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserDeatil
+    public partial class OutgoingContractTable
     {
         public int ID { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string Department { get; set; }
+        public string ContractOfficer { get; set; }
+        public string ContractTitles { get; set; }
+        public string Notes { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     }
 }

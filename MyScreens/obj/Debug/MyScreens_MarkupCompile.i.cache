@@ -4,16 +4,16 @@
 library
 C#
 .cs
-C:\Users\Dell\source\repos\WpfApp_DMS\MyScreens\obj\Debug\
+D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\
 MyScreens
 none
 false
 DEBUG;TRACE
 
 51722380863
-2-513325238
-191326425795
-1341687470482
+2190950926
+20249073006
+1341595323991
 Views\EmploymentView.xaml;Views\HomeScreen.xaml;Views\IncomingWorkContract.xaml;Views\LoginScreen.xaml;Views\SearchPage.xaml;
 
 False

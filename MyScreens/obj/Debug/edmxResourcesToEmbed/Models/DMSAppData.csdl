@@ -1,10 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="UserEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="UserDetailEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="IncomingContractTables" EntityType="UserEntityModel.IncomingContractTable" />
-    <EntitySet Name="OutgoingContractTables" EntityType="UserEntityModel.OutgoingContractTable" />
-    <EntitySet Name="UserDetails" EntityType="UserEntityModel.UserDetail" />
-  </EntityContainer>
+<Schema Namespace="DMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="IncomingContractTable">
     <Key>
       <PropertyRef Name="ID" />
@@ -36,4 +31,9 @@
     <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityContainer Name="DMSAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IncomingContractTables" EntityType="Self.IncomingContractTable" />
+    <EntitySet Name="OutgoingContractTables" EntityType="Self.OutgoingContractTable" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+  </EntityContainer>
 </Schema>

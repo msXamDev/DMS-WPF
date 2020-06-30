@@ -13,10 +13,10 @@ namespace MyScreens.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UserDetailEntities : DbContext
+    public partial class DMSAppEntities : DbContext
     {
-        public UserDetailEntities()
-            : base("name=UserDetailEntities")
+        public DMSAppEntities()
+            : base("name=DMSAppEntities")
         {
         }
     
@@ -25,6 +25,8 @@ namespace MyScreens.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserDeatil> UserDeatils { get; set; }
+        public virtual DbSet<IncomingContractTable> IncomingContractTables { get; set; }
+        public virtual DbSet<OutgoingContractTable> OutgoingContractTables { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
     }
 }
