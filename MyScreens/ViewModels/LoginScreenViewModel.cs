@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using MyScreens.Model;
+using MyScreens.Models;
 using MyScreens.Views;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -19,10 +20,15 @@ namespace MyScreens.ViewModels
 {
     public class LoginScreenViewModel : BindableBase
     {
-        Login login = new Login();
+        //Login login = new Login();
+        UserDetailEntities db = new UserDetailEntities();
+
+
+        //var query;
+        
         private IRegionManager _regionManager;
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string UserName { get; set; }
+        public string PassWord { get; set; }
         public DelegateCommand<object> LogIn { get; private set; }
         public LoginScreenViewModel(IRegionManager regionManager)
         {
@@ -32,9 +38,12 @@ namespace MyScreens.ViewModels
 
         private void LogInClicked( object parameter)
         {
+            var query = from u in db.UserDeatils
+                    where u.Username == UserName && u.Password == PassWord
+                    select u;
             var passwordbox = parameter as PasswordBox;
-            Password = passwordbox.Password;
-            if (Username == login.username && Password == login.password)
+            PassWord = passwordbox.Password;
+            if (query.SingleOrDefault()!=null)
             {
                 navigate navigateMeth = new navigate(_regionManager);
                 navigateMeth.navigateMethod("HomeScreen");
@@ -42,7 +51,7 @@ namespace MyScreens.ViewModels
             }
             else
             {
-                MessageBox.Show("Incorrect Username or passwod");
+                MessageBox.Show("Incorrect Username or password");
             }
         }
     }

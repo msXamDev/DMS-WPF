@@ -47,7 +47,7 @@
                Margin="0,0,250,0"
                VerticalAlignment="Top"/>
         <TextBox Grid.Row="1" Height="60" Width="400"
-                 Text="{Binding Username}"
+                 Text="{Binding UserName}"
                  x:Name="UserName" BorderBrush="Black" BorderThickness="2"
                  Margin="35,0,35,0" FontSize="25"                 
                  VerticalAlignment="Bottom"
@@ -74,7 +74,6 @@
                          VerticalContentAlignment="Center"
                          FontSize="25">
             </PasswordBox>
-            <!--<TextBlock Text="{Binding plain}"/>-->
         </StackPanel>
         
         <TextBlock Grid.Row="3" HorizontalAlignment="Center"
