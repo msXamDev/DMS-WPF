@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="IncomingContractTable">
           <Key>
             <PropertyRef Name="ID" />
@@ -15,7 +15,7 @@
           <Property Name="ContractTitles" Type="nvarchar" MaxLength="50" />
           <Property Name="Notes" Type="nvarchar" MaxLength="200" />
           <Property Name="Recommendations" Type="nvarchar" MaxLength="100" />
-          <Property Name="Date" Type="date" />
+          <Property Name="ContractDate" Type="datetime" />
         </EntityType>
         <EntityType Name="OutgoingContractTable">
           <Key>
@@ -26,7 +26,7 @@
           <Property Name="ContractOfficer" Type="nvarchar" MaxLength="50" />
           <Property Name="ContractTitles" Type="nvarchar" MaxLength="50" />
           <Property Name="Notes" Type="nvarchar" MaxLength="200" />
-          <Property Name="Date" Type="date" />
+          <Property Name="ContractDate" Type="datetime" />
         </EntityType>
         <EntityType Name="UserDetails">
           <Key>
@@ -41,11 +41,23 @@
           <EntitySet Name="OutgoingContractTable" EntityType="Self.OutgoingContractTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DMSAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+          <EntitySet Name="IncomingContractTables" EntityType="DMSModel.IncomingContractTable" />
+          <EntitySet Name="OutgoingContractTables" EntityType="DMSModel.OutgoingContractTable" />
+        </EntityContainer>
         <EntityType Name="IncomingContractTable">
           <Key>
             <PropertyRef Name="ID" />
@@ -56,7 +68,7 @@
           <Property Name="ContractTitles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Recommendations" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="OutgoingContractTable">
           <Key>
@@ -67,58 +79,45 @@
           <Property Name="ContractOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ContractTitles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="UserDetail">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="DMSAppEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="IncomingContractTables" EntityType="Self.IncomingContractTable" />
-          <EntitySet Name="OutgoingContractTables" EntityType="Self.OutgoingContractTable" />
-          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DMSModelStoreContainer" CdmEntityContainer="DMSAppEntities">
-          <EntitySetMapping Name="IncomingContractTables">
-            <EntityTypeMapping TypeName="DMSModel.IncomingContractTable">
-              <MappingFragment StoreEntitySet="IncomingContractTable">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="Customer" ColumnName="Customer" />
-                <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OutgoingContractTables">
-            <EntityTypeMapping TypeName="DMSModel.OutgoingContractTable">
-              <MappingFragment StoreEntitySet="OutgoingContractTable">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="ContractOfficer" ColumnName="ContractOfficer" />
-                <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserDetails">
             <EntityTypeMapping TypeName="DMSModel.UserDetail">
               <MappingFragment StoreEntitySet="UserDetails">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IncomingContractTables">
+            <EntityTypeMapping TypeName="DMSModel.IncomingContractTable">
+              <MappingFragment StoreEntitySet="IncomingContractTable">
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutgoingContractTables">
+            <EntityTypeMapping TypeName="DMSModel.OutgoingContractTable">
+              <MappingFragment StoreEntitySet="OutgoingContractTable">
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+                <ScalarProperty Name="ContractOfficer" ColumnName="ContractOfficer" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

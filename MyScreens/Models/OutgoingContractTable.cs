@@ -19,6 +19,6 @@ namespace MyScreens.Models
         public string ContractOfficer { get; set; }
         public string ContractTitles { get; set; }
         public string Notes { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.DateTime> ContractDate { get; set; }
     }
 }

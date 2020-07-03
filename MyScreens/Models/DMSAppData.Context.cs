@@ -25,8 +25,8 @@ namespace MyScreens.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<IncomingContractTable> IncomingContractTables { get; set; }
         public virtual DbSet<OutgoingContractTable> OutgoingContractTables { get; set; }
-        public virtual DbSet<UserDetail> UserDetails { get; set; }
     }
 }

@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DMSAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+    <EntitySet Name="IncomingContractTables" EntityType="DMSModel.IncomingContractTable" />
+    <EntitySet Name="OutgoingContractTables" EntityType="DMSModel.OutgoingContractTable" />
+  </EntityContainer>
   <EntityType Name="IncomingContractTable">
     <Key>
       <PropertyRef Name="ID" />
@@ -10,7 +23,7 @@
     <Property Name="ContractTitles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Recommendations" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="ContractDate" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="OutgoingContractTable">
     <Key>
@@ -21,19 +34,6 @@
     <Property Name="ContractOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ContractTitles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="ContractDate" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityType Name="UserDetail">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityContainer Name="DMSAppEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="IncomingContractTables" EntityType="Self.IncomingContractTable" />
-    <EntitySet Name="OutgoingContractTables" EntityType="Self.OutgoingContractTable" />
-    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
-  </EntityContainer>
 </Schema>

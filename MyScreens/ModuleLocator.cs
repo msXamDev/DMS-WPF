@@ -20,7 +20,7 @@ namespace MyScreens
         }
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RegisterViewWithRegion("MainRegion", typeof(LoginScreen));
+            _regionManager.RegisterViewWithRegion("MainRegion", typeof(EmploymentView));
             
         }
 

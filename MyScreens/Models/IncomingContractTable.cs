@@ -20,6 +20,6 @@ namespace MyScreens.Models
         public string ContractTitles { get; set; }
         public string Notes { get; set; }
         public string Recommendations { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.DateTime> ContractDate { get; set; }
     }
 }

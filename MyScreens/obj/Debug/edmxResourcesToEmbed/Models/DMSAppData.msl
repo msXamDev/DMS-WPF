@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DMSModelStoreContainer" CdmEntityContainer="DMSAppEntities">
-    <EntitySetMapping Name="IncomingContractTables">
-      <EntityTypeMapping TypeName="DMSModel.IncomingContractTable">
-        <MappingFragment StoreEntitySet="IncomingContractTable">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Department" ColumnName="Department" />
-          <ScalarProperty Name="Customer" ColumnName="Customer" />
-          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
-          <ScalarProperty Name="Notes" ColumnName="Notes" />
-          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="OutgoingContractTables">
-      <EntityTypeMapping TypeName="DMSModel.OutgoingContractTable">
-        <MappingFragment StoreEntitySet="OutgoingContractTable">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Department" ColumnName="Department" />
-          <ScalarProperty Name="ContractOfficer" ColumnName="ContractOfficer" />
-          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
-          <ScalarProperty Name="Notes" ColumnName="Notes" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="UserDetails">
       <EntityTypeMapping TypeName="DMSModel.UserDetail">
         <MappingFragment StoreEntitySet="UserDetails">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingContractTables">
+      <EntityTypeMapping TypeName="DMSModel.IncomingContractTable">
+        <MappingFragment StoreEntitySet="IncomingContractTable">
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="Recommendations" ColumnName="Recommendations" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OutgoingContractTables">
+      <EntityTypeMapping TypeName="DMSModel.OutgoingContractTable">
+        <MappingFragment StoreEntitySet="OutgoingContractTable">
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ContractTitles" ColumnName="ContractTitles" />
+          <ScalarProperty Name="ContractOfficer" ColumnName="ContractOfficer" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
