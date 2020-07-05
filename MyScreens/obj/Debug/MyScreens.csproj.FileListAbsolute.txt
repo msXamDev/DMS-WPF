@@ -92,3 +92,4 @@ D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.csproj.CoreCompileI
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.csproj.CopyComplete
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.dll
 D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.pdb
+D:\GIT_Projects_all\WpfApp_DMS\MyScreens\obj\Debug\MyScreens.csprojAssemblyReference.cache

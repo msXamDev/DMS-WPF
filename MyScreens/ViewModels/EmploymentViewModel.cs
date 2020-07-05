@@ -20,15 +20,21 @@ namespace MyScreens.ViewModels
     class EmploymentViewModel : BindableBase
     {
         private readonly IRegionManager _regionManager;
+
+        DMSAppEntities db = new DMSAppEntities();
+
+        OutgoingContractTable table = new OutgoingContractTable();
         public DelegateCommand<string> HomeButton { get; private set; }
         public DelegateCommand SaveBtn { get; private set; }
         public DelegateCommand DeleteButton { get; private set; }
         private string _contractOfficer;
         private string _department;
-        private Nullable<System.DateTime> _dates;
+        private DateTime? _dates;
         private string _contractTitles;
         private string _notes;
-        
+        private string _contractDatepicker;
+        private string _mandatoryLabel;
+
         public string ContractOfficer
         {
             get { return _contractOfficer; }
@@ -39,7 +45,7 @@ namespace MyScreens.ViewModels
             get { return _department; }
             set {SetProperty(ref _department, value); }
         }
-        public Nullable<System.DateTime> Dates
+        public DateTime? Dates
         {
             get { return _dates; }
             set { SetProperty(ref _dates, value); }
@@ -54,8 +60,6 @@ namespace MyScreens.ViewModels
             get { return _notes; }
             set { SetProperty(ref _notes, value); }
         }
-
-        private string _contractDatepicker;
         public string contractDatepicker
         {
             get { return _contractDatepicker; }
@@ -65,10 +69,6 @@ namespace MyScreens.ViewModels
                 RaisePropertyChanged("contractDatepicker");
             }
         }
-        //public DateTime Dates { get; set; }
-
-        private string _mandatoryLabel;
-
         public string MandatoryLabel
         {
             get { return _mandatoryLabel; }
@@ -78,9 +78,6 @@ namespace MyScreens.ViewModels
                 RaisePropertyChanged("MandatoryLabel");
             }
         }
-        
-        DMSAppEntities db = new DMSAppEntities();
-        OutgoingContractTable table = new OutgoingContractTable();
 
         public EmploymentViewModel(IRegionManager regionManager)
         {
@@ -114,7 +111,6 @@ namespace MyScreens.ViewModels
             {
                 MandatoryLabel = "*This field is mandatory";
             }
-            
         }
 
         private void DeleteBtnClicked()
