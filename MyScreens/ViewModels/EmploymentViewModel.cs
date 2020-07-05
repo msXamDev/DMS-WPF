@@ -42,7 +42,7 @@ namespace MyScreens.ViewModels
         public Nullable<System.DateTime> Dates
         {
             get { return _dates; }
-            set { SetProperty(ref _dates, value); RaisePropertyChanged("Dates"); }
+            set { SetProperty(ref _dates, value); }
         }
         public string ContractTitles
         {
