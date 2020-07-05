@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Navigation;
 
 namespace MyScreens.ViewModels
@@ -24,7 +25,7 @@ namespace MyScreens.ViewModels
         public DelegateCommand DeleteButton { get; private set; }
         private string _contractOfficer;
         private string _department;
-        private string _dates;
+        private Nullable<System.DateTime> _dates;
         private string _contractTitles;
         private string _notes;
         
@@ -38,10 +39,10 @@ namespace MyScreens.ViewModels
             get { return _department; }
             set {SetProperty(ref _department, value); }
         }
-        public string Dates
+        public Nullable<System.DateTime> Dates
         {
             get { return _dates; }
-            set { SetProperty(ref _dates, value); }
+            set { SetProperty(ref _dates, value); RaisePropertyChanged("Dates"); }
         }
         public string ContractTitles
         {
@@ -53,12 +54,33 @@ namespace MyScreens.ViewModels
             get { return _notes; }
             set { SetProperty(ref _notes, value); }
         }
+
+        private string _contractDatepicker;
+        public string contractDatepicker
+        {
+            get { return _contractDatepicker; }
+            set
+            {
+                SetProperty(ref _contractDatepicker, value);
+                RaisePropertyChanged("contractDatepicker");
+            }
+        }
         //public DateTime Dates { get; set; }
 
+        private string _mandatoryLabel;
+
+        public string MandatoryLabel
+        {
+            get { return _mandatoryLabel; }
+            set 
+            {
+                _mandatoryLabel = value;
+                RaisePropertyChanged("MandatoryLabel");
+            }
+        }
+        
         DMSAppEntities db = new DMSAppEntities();
         OutgoingContractTable table = new OutgoingContractTable();
-
-        //public OutgoingContractTable OutgoingContractTable { get; set; }
 
         public EmploymentViewModel(IRegionManager regionManager)
         {
@@ -70,52 +92,79 @@ namespace MyScreens.ViewModels
 
         private void SaveBtnClicked()
         {
-            table.ContractOfficer = ContractOfficer;
-            table.Department = Department;
-            table.ContractTitles = ContractTitles;
-            table.Notes = Notes;
-            table.ContractDate = Convert.ToDateTime(Dates);
-            db.OutgoingContractTables.Add(table);
-            db.SaveChanges();
-            //var contractOfficer = CreateNewContract();
-            //await _contractOfficerRepos.SaveAsync();
-            MessageBox.Show("Added Successfully", "Success", MessageBoxButton.OK);
-            ClearEntries();
-        }
+            if (!string.IsNullOrWhiteSpace(ContractOfficer) && ContractOfficer.Length != 0
+                && !string.IsNullOrWhiteSpace(Department) && Department.Length != 0)
+            {
+                table.ContractOfficer = ContractOfficer;
+                table.Department = Department;
+                table.ContractTitles = ContractTitles;
+                table.Notes = Notes;
+                table.ContractDate = Dates;
+                db.OutgoingContractTables.Add(table);
+                db.SaveChanges();
 
-        //private object CreateNewContract()
-        //{
-        //    var contractOfficer = new OutgoingContractTable();
-        //    ContractOfficer.Add(contractOfficer);
-        //    //.Add(contractOfficer);
-        //    return contractOfficer;
-        //}
-        //public void Add(OutgoingContractTable outgoingContractTable)
-        //{
-        //    db.OutgoingContractTables.Add(outgoingContractTable);
-        //}
+                MessageBox.Show("Added Successfully", "Success", MessageBoxButton.OK);
+                ClearEntries();
+
+                MandatoryLabel = string.Empty;
+            }
+            //else if (string.IsNullOrWhiteSpace(ContractOfficer) && ContractOfficer.Length == 0
+            //    || string.IsNullOrWhiteSpace(Department) && Department.Length == 0)
+            else
+            {
+                MandatoryLabel = "*This field is mandatory";
+            }
+            
+        }
 
         private void DeleteBtnClicked()
-        {
-            MessageBoxResult result= MessageBox.Show("Press OK to delete all entries", "Delete !", MessageBoxButton.OKCancel);
-            if(result== MessageBoxResult.OK)
+        {            
+            if(!string.IsNullOrWhiteSpace(ContractOfficer) && ContractOfficer.Length>0
+                || !string.IsNullOrWhiteSpace(Department) && Department.Length > 0 
+               // || !string.IsNullOrWhiteSpace(contractDatepicker) && contractDatepicker.Length > 0
+                || !string.IsNullOrWhiteSpace(Convert.ToString(Dates)) && Convert.ToString(Dates).Length>0
+                || !string.IsNullOrWhiteSpace(ContractTitles) && ContractTitles.Length > 0
+                || !string.IsNullOrWhiteSpace(Notes) && Notes.Length > 0)
             {
-                ClearEntries(); 
+                MessageBoxResult result = MessageBox.Show("Are you sure? You want to delete entries", "Delete !", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    ClearEntries();
+                }
             }
         }
+        
         private void ClearEntries()
         {
             ContractOfficer = string.Empty;
             Department = string.Empty;
-            //Dates = new DateTime();
-            //Dates = Convert.ToDateTime("");
+            contractDatepicker = string.Empty;
             ContractTitles = string.Empty;
             Notes = string.Empty;
         }
         private void HomeButtonClicked(string obj)
         {
-            if (obj != null)
+            if (!string.IsNullOrWhiteSpace(ContractOfficer) && ContractOfficer.Length > 0
+                || !string.IsNullOrWhiteSpace(Department) && Department.Length > 0
+                //|| !string.IsNullOrWhiteSpace(contractDatepicker) && contractDatepicker.Length > 0
+                || !string.IsNullOrWhiteSpace(Convert.ToString(Dates)) && Convert.ToString(Dates).Length>0
+                || !string.IsNullOrWhiteSpace(ContractTitles) && ContractTitles.Length > 0
+                || !string.IsNullOrWhiteSpace(Notes) && Notes.Length > 0)
+            {
+                MessageBoxResult result = MessageBox.Show("You will loose all entries. Press cancel to stay on this page",
+                    "Warning !", MessageBoxButton.OKCancel);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    if (obj != null)
+                        _regionManager.RequestNavigate("MainRegion", obj);
+                    ClearEntries();
+                }
+            }
+            else
+            {
                 _regionManager.RequestNavigate("MainRegion", obj);
+            }
         }
     }
 }
