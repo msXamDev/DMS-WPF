@@ -103,7 +103,7 @@ namespace MyScreens.ViewModels
                 MessageBox.Show("Added Successfully", "Success", MessageBoxButton.OK);
                 ClearEntries();
 
-                MandatoryLabel = string.Empty;
+                
             }
             //else if (string.IsNullOrWhiteSpace(ContractOfficer) && ContractOfficer.Length == 0
             //    || string.IsNullOrWhiteSpace(Department) && Department.Length == 0)
@@ -137,6 +137,7 @@ namespace MyScreens.ViewModels
             contractDatepicker = string.Empty;
             ContractTitles = string.Empty;
             Notes = string.Empty;
+            MandatoryLabel = string.Empty;
         }
         private void HomeButtonClicked(string obj)
         {

@@ -44,19 +44,13 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center" Margin="187,0,280,0">
             <TextBlock TextAlignment="Center"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Height="81">
-                <Run Text="Employment"/><LineBreak/>
+                       Height="114">
+                <Run Text="Outgoing"/><LineBreak/>
+                <Run Text="work"/><LineBreak/>
                 <Run Text="Contract"/><LineBreak/>
             </TextBlock>
         </Button>
-        <!--<Image Source="/MyScreens;component/img/employment.png"
-               Grid.Column="0" Width="50" Height="50"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" 
-               Margin="138,140,0,0"/>-->
-
+        
         <Button Grid.Column="1"
                 Style="{StaticResource ResourceKey=PageButton}"
                 Command="{Binding IncWorkConButton}"
@@ -71,12 +65,7 @@
                 <Run Text="Contract"/><LineBreak/>
             </TextBlock>
         </Button>
-        <!--<Image Source="/MyScreens;component/img/IncomingWork.png"
-               Grid.Column="1" Width="50" Height="50"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" 
-               Margin="104.8,140,0,0"/>-->
-
+        
         <Button Grid.Column="1"
                 Style="{StaticResource ResourceKey=PageButton}"
                 Command="{Binding SearchButton}"
